@@ -129,10 +129,13 @@ namespace csvexport
             outfile.Close();
             
             // Report to user how many problems Field 17 contained.
-            Console.WriteLine("We located {0} item(s) in Column R that require your attention.", NF);
-            Console.WriteLine("");
-            Console.WriteLine("Press Enter to Continue.");
-            Console.ReadLine();
+            if (NF != 0)
+            {
+                Console.WriteLine("We located {0} item(s) in Column N that require your attention.", NF);
+                Console.WriteLine("");
+                Console.WriteLine("Press Enter to Continue.");
+                Console.ReadLine();
+            }
         }
     }
 }
