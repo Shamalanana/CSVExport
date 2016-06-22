@@ -51,6 +51,8 @@ namespace csvexport
             int scacCount = Convert.ToInt16(Console.ReadLine());
             // Create an array to store SCACs in.
             string[] scac = new string[scacCount];
+            // Create a counter for non-identified items in field 17
+            int NF = 0;
             // Populate SCAC array.
             for (int i = 0; i < scacCount; i++)
             {
@@ -95,6 +97,7 @@ namespace csvexport
                             outline.Append("PM,");
                         else
                         {
+                            NF++;
                             outline.Append(values[17]);
                             outline.Append(",");
                         }
@@ -124,6 +127,12 @@ namespace csvexport
             }
             // Close the file
             outfile.Close();
+            
+            // Report to user how many problems Field 17 contained.
+            Console.WriteLine("We located {0} item(s) in Column R that require your attention.", NF);
+            Console.WriteLine("");
+            Console.WriteLine("Press Enter to Continue.");
+            Console.ReadLine();
         }
     }
 }
