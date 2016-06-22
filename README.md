@@ -8,3 +8,7 @@ Collect some data from the user.
 Process a file called import.csv located in the same directory as the
 program.
 Save the altered information to the output.csv file and close it.
+
+Included in the root is a template file used to generate the
+output.csv based on specific user-required parameters. The
+template file also houses a primitive to-do list.
